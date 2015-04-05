@@ -18,7 +18,7 @@ alter table phone_numbers add constraint fk_phone_numbers_people
 insert into phone_numbers (phone_number, phone_type, person_id)
   select phone_number, 'H', person_id from people;
 
---alter table people drop column phone_number;
+alter table people drop column phone_number;
 
 drop view people_view;
 
