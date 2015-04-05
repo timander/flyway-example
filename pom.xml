@@ -7,11 +7,21 @@
     <artifactId>flyway-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <mysql.driver.version>5.1.13</mysql.driver.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.2.141</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.driver.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -31,6 +41,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0-alpha-2</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
@@ -55,7 +66,7 @@
                     <user>${database.username}</user>
                     <password>${database.password}</password>
                     <schemas>
-                        <schema>contacts</schema>
+                        <schema>customer_dev</schema>
                     </schemas>
                     <locations>
                         <location>sql/migrations</location>
