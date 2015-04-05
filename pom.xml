@@ -8,31 +8,21 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <flyway.version>3.2.1</flyway.version>
         <mysql.driver.version>5.1.13</mysql.driver.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.2.141</version>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.driver.version}</version>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.dbfit</groupId>
-            <artifactId>dbfit</artifactId>
-            <version>1.1.2.2</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -59,7 +49,7 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>${flyway.version}</version>
                 <configuration>
                     <driver>${database.driver}</driver>
                     <url>${database.url}</url>

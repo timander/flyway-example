@@ -1,0 +1,17 @@
+Example of database migrations using Flyway
+
+GETTING STARTED:
+------------------------------------
+MySQL commands
+------------------------------------
+$ mysql -u root -p
+mysql> create database customer_dev;
+mysql> grant all on customer_dev.* to admin@localhost identified by 'p@ssw0rd';
+
+LAB EXERCISES:
+ 1.) Add new migration to indicate preferred customers
+    - the view should only display preferred customers
+    - existing customers are preferred
+ 2.) Extract Addresses to support multiple addresses
+    - keep the contract the same for the view
+    - existing addresses are considered as primary address
