@@ -6,11 +6,17 @@ create table email (
 );
 
 create table email_type (
-  email_type        char(1),
+  email_type        char(1) not null primary key,
   description       varchar(20)
 );
 
-insert into email_type (email_type, description) values ('P', 'Primary');
+insert into email_type (email_type, description)
+select 'P', 'Primary'
+union all
+select 'W', 'Work';
 
 alter table email add constraint fk_person_email
   foreign key (person_id) references people(person_id);
+
+alter table email add constraint fk_email_type
+  foreign key (email_type) references email_type(email_type);
