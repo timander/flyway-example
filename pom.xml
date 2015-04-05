@@ -9,10 +9,10 @@
 
     <dependencies>
         <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.2.141</version>
-            </dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.2.141</version>
+        </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
@@ -27,7 +27,6 @@
     </dependencies>
 
     <build>
-        <finalName>rafl</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -40,7 +39,7 @@
                         </goals>
                         <configuration>
                             <files>
-                              <file>${basedir}/src/main/resources/config/config.properties</file>
+                                <file>${basedir}/src/main/resources/config/config.properties</file>
                             </files>
                         </configuration>
                     </execution>
@@ -55,13 +54,14 @@
                     <url>${database.url}</url>
                     <user>${database.username}</user>
                     <password>${database.password}</password>
+                    <schemas>
+                        <schema>contacts</schema>
+                    </schemas>
                     <locations>
                         <location>sql/migrations</location>
                     </locations>
                     <encoding>ISO-8859-1</encoding>
-                    <validationMode>ALL</validationMode>
                     <cleanOnValidationError>true</cleanOnValidationError>
-                    <disableInitCheck>false</disableInitCheck>
                 </configuration>
                 <executions>
                     <execution>
