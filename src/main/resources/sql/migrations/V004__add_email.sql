@@ -11,9 +11,9 @@ create table email_type (
 );
 
 insert into email_type (email_type, description)
-select 'P', 'Primary'
+select 'P', '${email_type.primary}'
 union all
-select 'W', 'Work';
+select 'W', '${email_type.work}';
 
 alter table email add constraint fk_person_email
   foreign key (person_id) references people(person_id);

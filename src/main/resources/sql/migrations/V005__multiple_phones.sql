@@ -10,7 +10,7 @@ create table phone_type (
   description       varchar(20)
 );
 
-insert into phone_type (phone_type, description) values ('H', 'Home');
+insert into phone_type (phone_type, description) values ('H', '${phone_type.home}');
 
 alter table phone_numbers add constraint fk_phone_numbers_people
   foreign key (person_id) references people(person_id);

@@ -15,3 +15,17 @@ LAB EXERCISES:
  2.) Extract Addresses to support multiple addresses
     - keep the contract the same for the view
     - existing addresses are considered as primary address
+ 3.) Execute migrations on a separate database using Command-line Tool
+    - initialize a new database
+    - run migrations
+    - verify no dev test data leaked over to the next environment
+
+$ mysql -u root -p
+mysql> create database customer_test;
+mysql> grant all on customer_test.* to sysdba@localhost identified by 'pa$$w3!rd';
+
+flyway info
+flyway clean
+flyway baseline
+flyway migrate -target=3
+flyway migrate
