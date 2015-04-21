@@ -29,3 +29,8 @@ flyway clean
 flyway baseline
 flyway migrate -target=3
 flyway migrate
+
+
+$ mysql -u root -p
+mysql> create database customer_prod;
+mysql> grant all on customer_prod.* to megadba@localhost identified by 'S3CR3T';
