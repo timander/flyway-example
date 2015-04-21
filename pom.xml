@@ -58,7 +58,7 @@
                 <executions>
                     <execution>
                         <id>flyway database migration</id>
-                        <phase>test-compile</phase>
+                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>clean</goal>
                             <goal>baseline</goal>
