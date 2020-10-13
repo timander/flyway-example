@@ -9,7 +9,7 @@
 
     <properties>
         <flyway.version>3.2.1</flyway.version>
-        <mysql.driver.version>5.1.13</mysql.driver.version>
+        <mysql.driver.version>8.0.16</mysql.driver.version>
         <database.driver>com.mysql.jdbc.Driver</database.driver>
         <database.url>jdbc:mysql://localhost:3306/customer_dev?autoreconnect=true</database.url>
         <database.username>admin</database.username>
